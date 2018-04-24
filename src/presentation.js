@@ -20,8 +20,7 @@ import createTheme from 'spectacle/lib/themes/default';
 
 import * as Styles from './presentation.styles'
 
-// Require CSS
-require('normalize.css');
+require('./vendor/reset.css');
 
 const logo = require("./images/logo.svg")
 
