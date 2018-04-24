@@ -28,7 +28,7 @@ require('./vendor/reset.css');
 const clueWhiteLogo = require('./images/clue-white.svg');
 const clueRedLogo = require('./images/clue-red.svg');
 const gitHubLogo = require('./images/github.svg');
-const regSuitLogo = require('./images/reg-suit.png');
+const regSuitLogo = require('./images/reg-suit.svg');
 const regSuitReport = require('./images/reg-suit-report.png');
 const storybookLogo = require('./images/storybook.svg');
 // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -124,7 +124,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="primary">
-          <Image src={regSuitLogo} margin="0 auto 40px" />
+          <Image src={regSuitLogo} margin="0 auto 40px" height="250px" />
           <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
             <img src={gitHubLogo} height="48px" /> reg-viz/reg-suit
           </Styles.HeadingLight>
@@ -135,7 +135,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="primary">
-          <Image src={regSuitLogo} margin="0 auto 40px" />
+          <Image src={regSuitLogo} margin="0 auto 40px" height="250px" />
           <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
             <img src={gitHubLogo} height="48px" /> reg-viz/reg-suit
           </Styles.HeadingLight>
