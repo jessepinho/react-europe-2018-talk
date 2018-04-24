@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prismjs": "1.6.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "spectacle-scripts": "2.0.0"
@@ -12,5 +13,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/spectacle": "^1.2.1",
+    "raw-loader": "^0.5.1"
   }
 }

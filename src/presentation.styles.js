@@ -1,7 +1,15 @@
 import styled from 'react-emotion';
-import { Heading } from 'spectacle';
+import { Heading as HeadingComponent } from 'spectacle';
 
-export const Subhead = styled(Heading)`
+export const Heading = styled(HeadingComponent)`
+  font-weight: 400;
+`
+
+export const HeadingLight = styled(HeadingComponent)`
+  font-weight: 200;
+`
+
+export const Subhead = styled(HeadingComponent)`
   font-style: italic;
   font-weight: 100;
 `
