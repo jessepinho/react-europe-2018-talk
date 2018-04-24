@@ -28,12 +28,15 @@ require('./vendor/reset.css');
 const clueWhiteLogo = require('./images/clue-white.svg');
 const clueRedLogo = require('./images/clue-red.svg');
 const gitHubLogo = require('./images/github.svg');
+const regSuitLogo = require('./images/reg-suit.png');
+const regSuitReport = require('./images/reg-suit-report.png');
 const storybookLogo = require('./images/storybook.svg');
 // eslint-disable-next-line import/no-webpack-loader-syntax
 const storybookExample = require("!raw-loader!./storybook.example");
 // eslint-disable-next-line import/no-webpack-loader-syntax
 const screenshotConfigExample = require("!raw-loader!./screenshot-config.example");
 const screenshotSizes = ['320x568', '768x1024', '1024x768', '1280x800', '1440x900'];
+const yogaEmoji = require('./images/yoga-emoji.png');
 
 const theme = createTheme(
   {
@@ -118,6 +121,28 @@ export default class Presentation extends React.Component {
               </Fill>
             ))}
           </Layout>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Image src={regSuitLogo} margin="0 auto 40px" />
+          <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
+            <img src={gitHubLogo} height="48px" /> reg-viz/reg-suit
+          </Styles.HeadingLight>
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Image src={regSuitReport} />
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Image src={regSuitLogo} margin="0 auto 40px" />
+          <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
+            <img src={gitHubLogo} height="48px" /> reg-viz/reg-suit
+          </Styles.HeadingLight>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Image fit src={yogaEmoji} />
         </Slide>
 
         <Slide bgColor="secondary">
