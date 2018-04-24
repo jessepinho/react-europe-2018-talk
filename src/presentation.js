@@ -150,7 +150,7 @@ export default class Presentation extends React.Component {
             Now you know.
           </Styles.Heading>
           <Styles.HeadingLight textColor="primary" textSize="48px">
-            bit.ly/screenshot-testing • @jessepinho
+            bit.ly/screenshot-testing &bull; <Styles.RegularItalic>@jessepinho</Styles.RegularItalic>
           </Styles.HeadingLight>
           <Image src={clueRedLogo} width="274px" margin="200px auto 0" />
           <Text margin="40px 0 0" textColor="primary">
