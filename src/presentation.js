@@ -7,6 +7,7 @@ import {
   Cite,
   Deck,
   Heading,
+  Image,
   ListItem,
   List,
   Quote,
@@ -17,8 +18,12 @@ import {
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 
+import * as Styles from './presentation.styles'
+
 // Require CSS
 require('normalize.css');
+
+const logo = require("./images/logo.svg")
 
 const theme = createTheme(
   {
@@ -42,10 +47,14 @@ export default class Presentation extends React.Component {
       >
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            Screenshot testing
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+          <Styles.Subhead size={4} lineHeight={1} textColor="secondary">
+            with <Styles.SubheadEmphasis>React</Styles.SubheadEmphasis> &amp; <Styles.SubheadEmphasis>Storybook</Styles.SubheadEmphasis>
+          </Styles.Subhead>
+          <Text margin="100px 0 0" textColor="tertiary" size={1}>
+            Jesse Pinho
+            <Image margin="20px auto 0" src={logo} width={137} />
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
