@@ -7,8 +7,10 @@ import {
   Cite,
   CodePane,
   Deck,
+  Fill,
   Heading,
   Image,
+  Layout,
   ListItem,
   List,
   Quote,
@@ -23,11 +25,15 @@ import * as Styles from './presentation.styles'
 
 require('./vendor/reset.css');
 
-const clueLogo = require('./images/clue.svg');
+const clueWhiteLogo = require('./images/clue-white.svg');
+const clueRedLogo = require('./images/clue-red.svg');
 const gitHubLogo = require('./images/github.svg');
 const storybookLogo = require('./images/storybook.svg');
 // eslint-disable-next-line import/no-webpack-loader-syntax
-const storybookExample = require("!raw-loader!./storybook.example.js")
+const storybookExample = require("!raw-loader!./storybook.example");
+// eslint-disable-next-line import/no-webpack-loader-syntax
+const screenshotConfigExample = require("!raw-loader!./screenshot-config.example");
+const screenshotSizes = ['320x568', '768x1024', '1024x768', '1280x800', '1440x900'];
 
 const theme = createTheme(
   {
@@ -36,7 +42,7 @@ const theme = createTheme(
     tertiary: '#a3d1db',
   },
   {
-    primary: { name: 'Fira Sans', googleFont: true, styles: [100, '100i', 200, 400, '400i', 700] },
+    primary: 'MrEavesClue',
     secondary: 'Helvetica',
   }
 );
@@ -50,26 +56,29 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         <Slide bgColor="primary">
-          <Styles.Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Styles.Heading size={1} fit lineHeight={1} textColor="secondary">
             Screenshot testing
           </Styles.Heading>
           <Styles.Subhead size={4} lineHeight={1} textColor="secondary">
             with <Styles.SubheadEmphasis>React</Styles.SubheadEmphasis> &amp; <Styles.SubheadEmphasis>Storybook</Styles.SubheadEmphasis>
           </Styles.Subhead>
-          <Text margin="100px 0 0" textColor="tertiary" size={1}>
-            Jesse Pinho
-            <Image margin="20px auto 0" src={clueLogo} width={137} />
-          </Text>
+          <Image margin="200px auto 0" src={clueWhiteLogo} width={200} />
+          <Styles.HeadingLight margin="20px 0 0" textColor="secondary" size={1} textSize="32px">
+            <Styles.RegularItalic>Jesse Pinho</Styles.RegularItalic>
+            {" "}• Senior Frontend Engineer for helloclue.com
+          </Styles.HeadingLight>
         </Slide>
-        <Slide bgColor="secondary">
+
+        <Slide bgColor="primary">
           <Image src={storybookLogo} fit />
-          <Text margin="100px 0 0" textColor="tertiary" size={1}>
+          <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
             storybook.js.org
-          </Text>
+          </Styles.HeadingLight>
         </Slide>
+
         <Slide bgColor="secondary">
-          <Text margin="0 0 40px" textColor="tertiary" size={1}>
-            stories/index.js
+          <Text textSize="48px" margin="0 0 40px" textColor="primary" size={1}>
+            <Styles.RegularItalic>stories/index.js</Styles.RegularItalic>
           </Text>
           <CodePane
             lang="jsx"
@@ -79,11 +88,49 @@ export default class Presentation extends React.Component {
             textSize="20px"
           />
         </Slide>
+
         <Slide bgColor="primary">
           <Image src={gitHubLogo} margin="0 auto 40px" width={250} />
-          <Styles.HeadingLight size={1} fit lineHeight={1} textColor="secondary">
-            tsuyoshiwada/storybook-chrome-screenshot
+          <Styles.HeadingLight textSize="72px" lineHeight={1} textColor="secondary">
+            storybook-chrome-screenshot
           </Styles.HeadingLight>
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Text textSize="48px" margin="0 0 40px" textColor="primary" size={1}>
+            <Styles.RegularItalic>stories/index.js</Styles.RegularItalic>
+          </Text>
+          <CodePane
+            lang="jsx"
+            source={screenshotConfigExample}
+            theme="light"
+            fit
+            textSize="20px"
+          />
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Layout>
+            {screenshotSizes.map(screenshot => (
+              <Fill key={screenshot}>
+                <Text textSize="24px">{screenshot}</Text>
+                <Image src={require(`./images/screenshots/${screenshot}.png`)} fit />
+              </Fill>
+            ))}
+          </Layout>
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Styles.Heading size={1} fit lineHeight={1} textColor="primary">
+            Now you know.
+          </Styles.Heading>
+          <Styles.HeadingLight textColor="primary" textSize="48px">
+            bit.ly/screenshot-testing • @jessepinho
+          </Styles.HeadingLight>
+          <Image src={clueRedLogo} width="274px" margin="200px auto 0" />
+          <Text margin="40px 0 0" textColor="primary">
+            <Styles.RegularItalic>www.helloclue.com</Styles.RegularItalic>
+          </Text>
         </Slide>
       </Deck>
     );
