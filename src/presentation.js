@@ -22,13 +22,12 @@ require('normalize.css');
 
 const theme = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quartenary: '#CECECE',
+    primary: '#e43939',
+    secondary: '#fff',
+    tertiary: '#a3d1db',
   },
   {
-    primary: 'Montserrat',
+    primary: { name: 'Fira Sans', googleFont: true, styles: ['100i', 400, '400i', 700] },
     secondary: 'Helvetica',
   }
 );
