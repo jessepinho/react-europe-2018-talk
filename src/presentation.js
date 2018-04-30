@@ -140,6 +140,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="secondary">
+          <Layout>
+            <Fill><Text textSize="24px">Before</Text></Fill>
+            <Fill><Text textSize="24px">After</Text></Fill>
+            <Fill><Text textSize="24px">Diff</Text></Fill>
+          </Layout>
           <Image src={regSuitReport} />
         </Slide>
 
