@@ -27,6 +27,7 @@ require('./vendor/reset.css');
 
 const clueWhiteLogo = require('./images/clue-white.svg');
 const clueRedLogo = require('./images/clue-red.svg');
+const detectiveEmoji = require('./images/detective-emoji.png');
 const gitHubLogo = require('./images/github.svg');
 const regSuitLogo = require('./images/reg-suit.svg');
 const regSuitReport = require('./images/reg-suit-report.png');
@@ -70,6 +71,14 @@ export default class Presentation extends React.Component {
             <Styles.RegularItalic>Jesse Pinho</Styles.RegularItalic>
             {" "}• Senior Frontend Engineer for helloclue.com
           </Styles.HeadingLight>
+        </Slide>
+
+        <Slide bgColor="primary">
+          <Styles.Subhead size={1} fit lineHeight={1} textColor="secondary" margin="0 auto 100px">
+            The <Styles.SubheadEmphasis>case</Styles.SubheadEmphasis> <br />
+            of the <Styles.SubheadEmphasis>missing checkbox</Styles.SubheadEmphasis>
+          </Styles.Subhead>
+          <Image fit src={detectiveEmoji} />
         </Slide>
 
         <Slide bgColor="primary">
