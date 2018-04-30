@@ -161,15 +161,11 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor="secondary">
           <Styles.Heading size={1} fit lineHeight={1} textColor="primary">
-            Now you know.
+            bit.ly/screenshot-testing
           </Styles.Heading>
           <Styles.HeadingLight textColor="primary" textSize="48px">
-            bit.ly/screenshot-testing &bull; <Styles.RegularItalic>@jessepinho</Styles.RegularItalic>
+            @jessepinho &bull; jessepinho.com
           </Styles.HeadingLight>
-          <Image src={clueRedLogo} width="274px" margin="200px auto 0" />
-          <Text margin="40px 0 0" textColor="primary">
-            <Styles.RegularItalic>www.helloclue.com</Styles.RegularItalic>
-          </Text>
         </Slide>
       </Deck>
     );
